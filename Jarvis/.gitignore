@@ -1,0 +1,12 @@
+# Python environment
+venv/
+shadow-ai/
+__pycache__/
+*.pyc
+
+# Local secrets
+.env
+
+# IDE settings
+.vscode/
+.idea/
