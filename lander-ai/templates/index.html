@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lander AI - Local Page Builder</title>
+    <!-- Tailwind CSS for a premium modern look -->
+    <script src="https://tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-center items-center p-6">
+    <div class="max-w-xl w-full bg-slate-800 rounded-xl p-8 shadow-2xl border border-slate-700">
+        <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-center mb-2">⚡ Lander AI Engine</h1>
+        <p class="text-slate-400 text-center mb-8 text-sm">Generate a high-converting, SEO-optimized landing page for local businesses instantly.</p>
+        
+        <!-- Interactive Web Submission Form -->
+        <form action="/generate" method="POST" class="space-y-6">
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">🏢 Business Name</label>
+                <input type="text" name="business_name" required placeholder="e.g., Apex Plumbing Co." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 text-white placeholder-slate-600 transition">
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">📍 Target City/Location</label>
+                    <input type="text" name="location" required placeholder="e.g., Boston, MA" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 text-white placeholder-slate-600 transition">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">🛠️ Primary Service</label>
+                    <input type="text" name="service" required placeholder="e.g., Emergency Drain Cleaning" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 text-white placeholder-slate-600 transition">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">⭐ Core Selling Point (USP)</label>
+                <input type="text" name="usp" required placeholder="e.g., 24/7 Availability with no hidden dispatch fees" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 focus:outline-none focus:border-cyan-400 text-white placeholder-slate-600 transition">
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-3.5 rounded-lg transition transform hover:-translate-y-0.5 shadow-lg shadow-cyan-500/20">🚀 Generate Landing Page</button>
+        </form>
+    </div>
+</body>
+</html>

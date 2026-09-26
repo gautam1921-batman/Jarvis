@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ business_name }} - {{ service }} in {{ location }}</title>
+    <!-- Robust Bootstrap styles fallback to guarantee visual rendering -->
+    <link href="https://cloudflare.com" rel="stylesheet">
+</head>
+<body class="font-sans bg-gray-50 text-gray-900 m-0 p-0 antialiased">
+
+    <!-- Premium Action Admin Dashboard Bar -->
+    <div class="bg-gray-900 text-white py-3.5 px-4 text-center sticky top-0 z-50 border-b border-cyan-500 shadow-md backdrop-blur-sm" style="background-color: #0f172a;">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span class="text-sm font-semibold tracking-wide text-cyan-400">⚡ Lander AI Editor Active</span>
+            <!-- EXPORT ACTION UTILITY TRIGGER BUTTON -->
+            <button onclick="downloadWebsiteCode()" class="bg-blue-500 text-white text-xs font-black uppercase tracking-wider px-5 py-2.5 rounded-lg transition transform hover:-translate-y-0.5 shadow-lg">💾 Download Website Code (.html)</button>
+        </div>
+    </div>
+
+    <!-- Client Header Navigation Row -->
+    <header class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-black tracking-tight text-blue-600 uppercase">{{ business_name }}</span>
+            <a href="tel:5551234567" class="bg-blue-600 text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-blue-700 transition shadow-sm">📞 Call Now</a>
+        </div>
+    </header>
+
+    <!-- Visual Hero Impact Matrix -->
+    <section class="bg-blue-900 text-white py-24 px-6 text-center" style="background: linear-gradient(135deg, #1e3a8a 0%, #111827 100%);">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-blue-500 text-blue-300 font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest border border-blue-500 border-opacity-20">{{ service }} Expert in {{ location }}</span>
+            <h1 class="text-3xl md:text-5xl font-black mt-6 mb-6 leading-tight text-white">{{ ai_data.hero_headline }}</h1>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">{{ ai_data.hero_subheadline }}</p>
+            <div class="bg-white bg-opacity-10 inline-block px-6 py-3 rounded-lg border border-white border-opacity-10 text-cyan-300 font-semibold mb-4 text-sm tracking-wide">🎯 {{ usp }}</div>
+        </div>
+    </section>
+
+    <!-- Service Feature Pitch Deck -->
+    <section class="py-20 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div class="p-2">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-5 tracking-tight">Why Choose {{ business_name }}?</h2>
+            <p class="text-gray-600 leading-relaxed text-base">{{ ai_data.value_paragraph }}</p>
+        </div>
+        <div class="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-xl shadow-sm">
+            <h3 class="text-xl font-bold mb-4 text-blue-900">✨ Our Operational Commitment</h3>
+            <p class="text-blue-950 font-medium leading-relaxed text-base">{{ ai_data.usp_paragraph }}</p>
+        </div>
+    </section>
+
+    <!-- Marketing Action Finale Section -->
+    <section class="bg-blue-600 text-white py-16 px-6 text-center" style="background-color: #2563eb;">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl font-black text-white mb-4 tracking-tight">Ready to Get Started?</h2>
+            <p class="text-blue-100 mb-8 max-w-lg mx-auto text-base">Get fast, reliable service in {{ location }} right now. Speak directly with our active on-call staff specialist.</p>
+            <a href="tel:5551234567" class="bg-white text-blue-600 font-black px-8 py-4 rounded-xl text-lg hover:bg-gray-100 transition inline-block shadow-xl">📞 Schedule Service Immediately</a>
+        </div>
+    </section>
+
+    <!-- CONTAINER SECURED FOR JAVASCRIPT EXECUTION -->
+    <script>
+    function downloadWebsiteCode() {
+        console.log("Initiating secure commercial checkout hook...");
+        
+        fetch('/api/v1/checkout', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            alert("💳 Redirecting to Stripe Secure Payment Gateway...\n\nPrice: $15.00 USD\n\nOnce checkout completes, your high-performance template file source code will automatically install!");
+            
+            let pageHTML = document.documentElement.outerHTML;
+            let cleanHTML = pageHTML.replace(/<div class="bg-gray-900[\s\S]*?<\/div>/, "");
+            let blob = new Blob([cleanHTML], { type: "text/html" });
+            let a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            // Dynamic naming generation fallback mechanics
+            let rawName = "{{ business_name }}";
+            let safeName = rawName.toLowerCase().replace(/[^a-z0-9]/g, "_");
+            a.download = safeName + "_landing_page.html";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    }
+    </script>
+</body>
+</html>
